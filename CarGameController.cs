@@ -77,3 +77,9 @@ public class CarGameController : NetworkBehaviour
         rearRight.brakeTorque = bForce;
     }
 }
+
+// Inside CarGameController.cs under OnStartLocalPlayer()
+public override void OnStartLocalPlayer()
+{
+    Camera.main.GetComponent<SmoothCameraFollow>().target = this.transform;
+}
