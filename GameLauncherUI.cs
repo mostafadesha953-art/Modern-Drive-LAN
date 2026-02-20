@@ -31,4 +31,14 @@ public class GameLauncherUI : MonoBehaviour
     {
         networkAddress = ip;
     }
+
+    // Example function to call from a UI Button
+    public void SelectRedColor()
+    {
+    GameObject localPlayer = NetworkClient.localPlayer.gameObject;
+    if (localPlayer != null)
+    {
+        localPlayer.GetComponent<CarCustomizer>().CmdChangeColor(Color.red);
+    }
+    }
 }
